@@ -28,7 +28,8 @@ public class Book {
 
     @ManyToOne(targetEntity = Genre.class,fetch = FetchType.LAZY)
     @JoinColumn(name = "genre_id")
-    private Author genre;
+    private Genre genre;
+
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "book")
     private List<Comment> commentList;
 }
